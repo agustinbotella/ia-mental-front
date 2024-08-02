@@ -32,9 +32,14 @@ function App() {
 
       await retellWebClient.startCall({
         accessToken: token,
+        captureDeviceId: "default",
       });
 
-      setCallStatus('connected')
+      retellWebClient.on("agent_start_talking", () => {
+        setCallStatus('connected')
+      });
+
+      
   }
 
   return (
@@ -51,14 +56,14 @@ function App() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          height: '100px',
+          height: '50px',
           marginBottom: '20px'
         }}
         >
           {
             callStatus === 'connected' && (<Bars
-                  height="80"
-                  width="80"
+                  height="40"
+                  width="40"
                   color="#4fa94d"
                   ariaLabel="bars-loading"
                   visible={true}
