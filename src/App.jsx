@@ -72,7 +72,10 @@ function App() {
           { callStatus === 'disconnected' ? 'Iniciar llamada' : callStatus === 'loading' ? 'Iniciando...' : 'Finalizar llamada' }
         </button>
         <p>
-          Clickea en el botón para iniciar una llamada
+          Clickea en el botón para iniciar una llamada.
+        </p>
+        <p>
+          El navegador te solicitara permisos para acceder al microfono. Una vez otorgado el permiso se iniciara la llamada.
         </p>
       </div>
     </>
