@@ -28,7 +28,12 @@ function App() {
     setCallStatus('loading')
 
     // prompt user to allow microphone access
-    await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+    // if theres no microphone permission, ask for it
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream.getTracks().forEach(track => {
+      retellWebClient.addStream(track);
+    });
+
 
     const token = await fetch('https://ia-mental-back-qcdtp.ondigitalocean.app/get-token/1')
       .then(response => response.json())
