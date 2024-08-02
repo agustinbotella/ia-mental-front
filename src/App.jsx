@@ -26,13 +26,16 @@ function App() {
     }
 
     setCallStatus('loading')
+
+    // prompt user to allow microphone access
+    await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+
     const token = await fetch('https://ia-mental-back-qcdtp.ondigitalocean.app/get-token/1')
       .then(response => response.json())
       .then(data => data.access_token)
 
       await retellWebClient.startCall({
         accessToken: token,
-        captureDeviceId: "default",
       });
 
       retellWebClient.on("agent_start_talking", () => {
