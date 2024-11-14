@@ -31,7 +31,7 @@ function App() {
     await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
 
 
-    const token = await fetch('https://ia-mental-back-qcdtp.ondigitalocean.app/get-token/1')
+    const token = await fetch('https://ia-mental-back-kagmh.ondigitalocean.app/get-token/1')
       .then(response => response.json())
       .then(data => data.access_token)
 
@@ -51,8 +51,7 @@ function App() {
       <div>
           <img src={viteLogo} className="logo" alt="Vite logo" />
       </div>
-      <h1>Agente de Salud Mental + IA</h1>
-      <h2>Nivel BAJO</h2>
+      <h1>Habla con Carlos</h1>
   
       <div className="card">
         <div
