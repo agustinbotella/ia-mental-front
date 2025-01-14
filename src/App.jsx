@@ -51,7 +51,7 @@ function App() {
       <div>
           <img src={viteLogo} className="logo" alt="Vite logo" />
       </div>
-      <h1>Hablar con Carlos</h1>
+      <h1>Hablar con Angie</h1>
   
       <div className="card">
         <div
