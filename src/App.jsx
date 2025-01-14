@@ -31,7 +31,7 @@ function App() {
     await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
 
 
-    const token = await fetch('https://ia-mental-back-kagmh.ondigitalocean.app/get-token/1')
+    const token = await fetch('https://ia-mental-back-kagmh.ondigitalocean.app/get-token/2')
       .then(response => response.json())
       .then(data => data.access_token)
 
